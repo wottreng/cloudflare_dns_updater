@@ -2,6 +2,7 @@
 
 import os
 import requests
+import time
 
 debug = False
 
@@ -67,11 +68,17 @@ def compare_wan_addr_to_record_addr(ipv4_addr_to_compare):
 def change_working_dir():
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+def record_current_time():
+    with open("lastRun.txt", "w") as doc:
+        doc.write(str(time.time()).split(".")[0])
+
 if __name__ == '__main__':
-    change_working_dir()
-    current_wan_ipv4_addr = get_current_wan_addr()
-    result = compare_wan_addr_to_record_addr(current_wan_ipv4_addr)
-    if result == False:
-        # update dns ipv4
-        update_dns_addr_on_record(current_wan_ipv4_addr)
-        
+    while 1:
+        change_working_dir()
+        record_current_time()
+        current_wan_ipv4_addr = get_current_wan_addr()
+        result = compare_wan_addr_to_record_addr(current_wan_ipv4_addr)
+        if result == False:
+            # update dns ipv4
+            update_dns_addr_on_record(current_wan_ipv4_addr)
+        time.sleep(300)
