@@ -12,7 +12,7 @@ monitors your wan address on pfense and updates cloudflare dns entry via API if 
 * remove zipfile: `rm requests.zip`
 * install python requests: `cd requests-main && python3.8 setup.py install`
 * install nano text editor: `pkg install nano`
-* edit crontab: `nano /etc/crontab`, then add `0	*	*	*	*	root	/root/pfsense_cloudflare_wan_updater/wan_monitor/wan_addr_monitor.py` to end of current cron tasks
+* edit crontab: `nano /etc/crontab`, then add `0	*	*	*	*	root	/root/pfsense_cloudflare_wan_updater/wan_monitor/main.py` to end of current cron tasks
 
 Cheers,
 Mark  🍺
