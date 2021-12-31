@@ -1,5 +1,5 @@
 # cloudflare_wan_updater
-monitors your wan address on pfense and updates cloudflare dns entry via API if ipv4 addresses dont match
+monitors your wan address on router/edge system and updates cloudflare dns entry via API if ipv4 addresses dont match
 
 ## install
 * ssh into your router/edge OS
