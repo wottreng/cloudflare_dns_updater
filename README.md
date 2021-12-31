@@ -15,7 +15,7 @@ monitors your wan address on pfense and updates cloudflare dns entry via API if 
 * install nano: `pkg install nano`
 * edit crontab: `nano /etc/crontab` and add `*/5	*	*	*	*	root	/root/pfsense_cloudflare_wan_updater/wan_addr_monitor/main.py`
   * this runs the service every 5 minutes
-* restart cron: `service stop cron && service start cron` 
+* restart cron: `service cron stop && service cron start` 
 
 
 
